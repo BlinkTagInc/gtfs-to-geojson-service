@@ -65,11 +65,27 @@ export const OptionsEditor = ({
             <img src={`/examples/${parsedOptions.outputFormat}.png`} alt={parsedOptions.outputFormat} />
             <i>Example output for <code>{parsedOptions.outputFormat}</code></i><br />
             <a href={`/examples/${parsedOptions.outputFormat}.geojson`} download>Download Example GeoJSON</a><br />
-            <a href="#" onClick={async (event) => {
-              event.preventDefault();
-              const geojson = await fetch(`/examples/${parsedOptions.outputFormat}.geojson`).then(res => res.json());
-              window.location = `https://geojson.io/#data=data:application/json,${encodeURIComponent(JSON.stringify(geojson, null, 2))}`;
-            }}>View Example on geojson.io</a>
+            <a
+              href={`https://geojson.io`}
+              className="text-blue-600 hover:text-blue-800 underline"
+              onClick={async (event) => {
+                event.preventDefault();
+                try {
+                  const response = await fetch(`/examples/${parsedOptions.outputFormat}.geojson`);
+                  if (!response.ok) {
+                    throw new Error('Failed to load example file');
+                  }
+                  const geojson = await response.json();
+                  const geojsonUrl = `https://geojson.io/#data=data:application/json,${encodeURIComponent(JSON.stringify(geojson, null, 2))}`;
+                  window.location.href = geojsonUrl;
+                } catch (error) {
+                  console.error('Error loading example:', error);
+                  alert('Failed to load example. Please try again later.');
+                }
+              }}
+            >
+              View Example on geojson.io
+            </a>
           </div>
         </div>
 

@@ -62,7 +62,7 @@ export default function Home() {
               Contact our team at <a href="mailto:gtfs@blinktag.com">gtfs@blinktag.com</a>.
               <br />
               <br />
-              We'd love to hear how you're using GTFS-to-geojson! <a href="mailto:gtfs@blinktag.com">Share your story</a> with us.
+              We&apos;d love to hear how you&apos;re using GTFS-to-geojson! <a href="mailto:gtfs@blinktag.com">Share your story</a> with us.
             </div>
           </div>
         </div>
