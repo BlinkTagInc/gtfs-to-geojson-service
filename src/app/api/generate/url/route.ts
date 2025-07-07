@@ -10,6 +10,22 @@ import { temporaryDirectory } from 'tempy';
 
 export const maxDuration = 300; // 5 minutes
 
+// CORS headers configuration
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  'Access-Control-Max-Age': '86400',
+};
+
+// Handle preflight OPTIONS requests
+export const OPTIONS = async () => {
+  return new NextResponse(null, {
+    status: 200,
+    headers: corsHeaders,
+  });
+};
+
 export const POST = async (request: Request) => {
   const body = await request.json();
   const gtfsUrl = body.url;
@@ -21,7 +37,10 @@ export const POST = async (request: Request) => {
         error: 'Missing URL',
         success: false,
       },
-      { status: 400 },
+      { 
+        status: 400,
+        headers: corsHeaders,
+      },
     );
   }
 
@@ -78,6 +97,7 @@ export const POST = async (request: Request) => {
       }),
       {
         headers: {
+          ...corsHeaders,
           'Content-Type': 'application/zip',
           'Content-Disposition': 'attachment; filename="geojson.zip"',
           'Content-Length': fileStats.size.toString(), // Set the content length
@@ -92,7 +112,10 @@ export const POST = async (request: Request) => {
         error: 'Unable to process GTFS',
         success: false,
       },
-      { status: 400 },
+      { 
+        status: 400,
+        headers: corsHeaders,
+      },
     );
   }
 };
