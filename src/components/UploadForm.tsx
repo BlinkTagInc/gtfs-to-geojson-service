@@ -10,6 +10,8 @@ import { OptionsEditor } from './OptionsEditor';
 
 const defaultOptions = {
   bufferSizeMeters: 400,
+  ignoreDuplicates: false,
+  ignoreErrors: false,
   outputType: 'agency',
   outputFormat: 'lines-and-stops',
 };
@@ -264,10 +266,7 @@ const UploadForm = () => {
             </label>
           </div>
           <div className="mt-2">
-            <OptionsEditor
-              options={options}
-              setOptions={setOptions}
-            />
+            <OptionsEditor options={options} setOptions={setOptions} />
           </div>
         </>
       )}
