@@ -14,25 +14,25 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "gtfs-to-geojson": "^3.8.5",
-    "next": "^16.2.3",
+    "next": "^16.2.5",
     "react": "^19",
     "react-dom": "^19",
     "react-dropzone": "^14.4.1",
-    "react-toastify": "^11.0.5",
+    "react-toastify": "^11.1.0",
     "tempy": "^3.2.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/postcss": "^4.2.4",
     "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "^16.2.3",
+    "eslint": "^10",
+    "eslint-config-next": "^16.2.5",
     "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
+    "lint-staged": "^17.0.2",
     "postcss": "^8",
-    "prettier": "^3.8.1",
-    "tailwindcss": "^4.2.2",
+    "prettier": "^3.8.3",
+    "tailwindcss": "^4.2.4",
     "typescript": "^6"
   },
   "release-it": {
