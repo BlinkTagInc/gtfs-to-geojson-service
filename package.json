@@ -14,10 +14,10 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "gtfs-to-geojson": "^3.8.5",
-    "next": "^16.2.5",
+    "next": "^16.2.6",
     "react": "^19",
     "react-dom": "^19",
-    "react-dropzone": "^14.4.1",
+    "react-dropzone": "^15.0.0",
     "react-toastify": "^11.1.0",
     "tempy": "^3.2.0"
   },
@@ -27,7 +27,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^10",
-    "eslint-config-next": "^16.2.5",
+    "eslint-config-next": "^16.2.6",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.2",
     "postcss": "^8",
@@ -57,5 +57,6 @@
     "*.ts": "prettier --write",
     "*.tsx": "prettier --write",
     "*.json": "prettier --write"
-  }
+  },
+  "packageManager": "pnpm@11.0.8"
 }
