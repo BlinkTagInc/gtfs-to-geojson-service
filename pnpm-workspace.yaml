@@ -4,4 +4,5 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
 minimumReleaseAgeExclude:
-  - gtfs-to-geojson@3.8.6
+  - gtfs-to-geojson@3.8.7
+  - gtfs@4.19.3
