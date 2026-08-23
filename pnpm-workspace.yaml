@@ -3,3 +3,6 @@ allowBuilds:
   protobufjs: true
   sharp: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - gtfs-to-geojson@3.8.8
+  - gtfs@4.21.0

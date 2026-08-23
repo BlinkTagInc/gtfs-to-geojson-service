@@ -131,7 +131,7 @@ export const POST = async (request: Request) => {
       outputPath: join(tempDir, buildId),
       sqlitePath: ':memory:',
       skipImport: false,
-      verbose: false,
+      logLevel: 'silent',
       zipOutput: true,
       log: (text: string) => {
         if (process.env.NODE_ENV === 'development') {
